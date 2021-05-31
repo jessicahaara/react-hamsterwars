@@ -6,12 +6,13 @@ import Home from './components/home/Home.jsx'
 import Battle from './components/battle/Battle.jsx'
 
 
+
 function App() {
   return (
     <Router>
       <div className="App">
         <header>
-          <Header />
+        {sessionStorage.getItem('enter') ? <Header /> : ''}
         </header>
         <main>
           <Switch>
