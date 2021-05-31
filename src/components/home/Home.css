@@ -1,0 +1,39 @@
+.home-main h2 {
+	font-size: 2em;
+	text-transform: uppercase;
+	margin-top: 1em;
+	letter-spacing: 0.1em;
+}
+
+.home-main hr {
+	border-top: 2px solid black;
+	width: 20%;
+	animation: hr-stretch 2s;
+}
+
+img.star {
+	padding: 0.5em;
+}
+
+.underline,
+.btn-logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.instructions {
+	width: 45%;
+	margin: 0 auto 0 auto;
+}
+
+.main-btns {
+	margin: 5em;
+	margin-top: 14em;
+}
+
+
+@keyframes hr-stretch {
+	0% {width: 0%;}
+	100% {width: 20%;}
+}
