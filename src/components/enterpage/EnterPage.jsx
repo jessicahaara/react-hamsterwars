@@ -12,7 +12,7 @@ const EnterPage = () => {
 			<div onClick={enter} >
 				<RedButton btnName="enter" />
 			</div>
-			<video autoPlay muted>
+			<video autoPlay muted onClick={enter}>
 				<source src={video} type="video/mp4"></source>
 			</video>
 		</div>

@@ -7,7 +7,7 @@ nav {
 }
 
 nav ul {
-	width: 45vw;
+	width: 55vw;
 	height: 100%;
 	display: flex;
 	justify-content: space-between;
@@ -17,6 +17,7 @@ nav ul {
 	text-transform: uppercase;
 	font-size: 2.5vw;
 	margin: 0 auto 0 auto;
+	letter-spacing: 0.05em;
 }
 
 nav ul li a {
