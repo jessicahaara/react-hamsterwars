@@ -1,4 +1,4 @@
-import './RedButton.css'
+import './Button.css'
 
 const RedButton = (props) => {
 	return (

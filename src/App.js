@@ -16,7 +16,7 @@ function App() {
 
     const getHamsters = async () => {
       try {
-        const response = await axios.get('http://localhost:1111/hamsters')
+        const response = await axios.get('/hamsters')
         setData(response.data);
       } catch (error) {
         console.log(error);

@@ -1,18 +1,40 @@
+import { useState } from 'react'
 import './Gallery.css'
 import GalleryCard from './GalleryCard.jsx'
+import NewHamster from './NewHamster.jsx'
+import HamsterInfo from './HamsterInfo.jsx'
 
 const Gallery = ({ hamsters }) => {
+	const [showAddNew, setShowAddNew] = useState(false)
+	const [showHamsterInfo, setShowHamsterInfo] = useState(false)
+	const [choosenHamster, setChoosenHamster] = useState({})
+
+	const moreInfo = (hamster) => {
+		setShowHamsterInfo(true)
+		setChoosenHamster(hamster)
+	}
 
 	return (
 		<div className="gallery">
 			<div className="grid">
 				{hamsters.map(hamster => (
-					<GalleryCard
-						key={hamster.id}
-						hamster={hamster}
-					/>
+					<div key={hamster.id}
+						onClick={() => moreInfo(hamster)}>
+						<GalleryCard
+							hamster={hamster}
+						/>
+					</div>
 				))}
+				<div className="add-new"
+					onClick={() => setShowAddNew(true)}>
+					<h3>Add new hamster</h3>
+					<p className="plus">+</p>
+				</div>
 			</div>
+
+			{showAddNew ? <NewHamster setShowAddNew={setShowAddNew} /> : ''}
+
+			{showHamsterInfo ? <HamsterInfo hamster={choosenHamster} setShowHamsterInfo={setShowHamsterInfo} /> : ''}
 		</div>
 	)
 }

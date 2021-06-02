@@ -1,3 +1,7 @@
+.gallery {
+	margin: 3vw 0;
+}
+
 .grid {
 	width: 86vw;
 	display: grid;
@@ -7,8 +11,8 @@
 	margin: 1em auto;
 }
 
-.gallery-card {
-	margin-top: 2vw;
+.gallery-card, 
+.add-new {
 	width: 20vw;
 	height: 25vw;
 	background-image: url('../../media/paper.jpg');
@@ -19,7 +23,6 @@
 }
 
 .top-card {
-	margin-top: 0.5vw;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -55,7 +58,25 @@
 	border: 2px solid black;
 }
 
-.gallery-card:hover {
+.gallery-card:hover,
+.add-new:hover {
 	transform: scale(1.1);
 	cursor: pointer;
+}
+
+.add-new {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.add-new .plus {
+	font-size: 8vw;
+}
+
+.add-new h3 {
+	text-transform: uppercase;
+	font-size: 2.2vw;
+	letter-spacing: 0.03em;
 }

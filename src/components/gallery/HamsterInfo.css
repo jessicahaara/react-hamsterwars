@@ -1,0 +1,118 @@
+.hamster-info {
+	width: 100vw;
+	min-height: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.8);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.hamster-info .lightbox {
+	width: 70vw;
+	height: 90vh;
+	background-image: url('../../media/paper.jpg');
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.hamster-info .lightbox .close {
+	font-family: 'Smokum';
+	font-size: 4vw;
+	position: absolute;
+	top: 5vh;
+	left: 81vw;	
+	color: black;
+	transition: 0.2s;
+}
+
+
+.hamster-info .lightbox .close:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+
+.top-lightbox {
+	margin-top: -2vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.lightbox hr {
+	width: 40%;
+	border: 2px solid black;
+}
+
+.lightbox .under {
+	margin: 0.5em auto;
+	width: 86%;
+}
+
+.lightbox h2 {
+	font-size: 4vw;
+	margin-top: -0.2em;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+.content-lightbox {
+	margin-top: 3vh;
+	width: 86%;
+	display:flex;
+	justify-content: space-between;
+}
+
+.content-lightbox img.hamster-pic {
+	width: 30vw;
+	height: 60vh;
+	object-fit: cover;
+	border: 4px solid black;
+}
+
+.content-lightbox .info {
+	width: 25vw;
+	text-align: start;
+	height: 60vh;
+	overflow-y: scroll;
+}
+
+.content-lightbox .info::-webkit-scrollbar {
+	display:none;
+}
+
+.content-lightbox .info h3 {
+	font-size: 2.5vw;
+}
+
+.content-lightbox .info p {
+	font-size: 2vw;
+}
+
+.h3-margin {
+	margin-top: 4vh; 
+}
+.hamster-info button {
+	background-color: var(--red);
+	border: 2px solid var(--darkred);
+	transition: 0.3s;
+	width: 8vw;
+	height: 2vw;
+	color: white;
+	position: absolute;
+	top: 87vh;
+	left: 75vw;
+}
+
+.hamster-info button:hover {
+	background-color: var(--darkred);
+	cursor: pointer;
+	transform: scale(1.1);
+}
