@@ -20,6 +20,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	/* animation: lightbox-grow 3s; */
 }
 
 .hamster-info .lightbox .close {
@@ -115,4 +116,15 @@
 	background-color: var(--darkred);
 	cursor: pointer;
 	transform: scale(1.1);
+}
+
+@keyframes lightbox-grow {
+	0% {
+		width: 0vw;
+		height: 0vw;
+	}	
+	100% {
+		width: 70vw;
+		height: 90vh;
+	}
 }

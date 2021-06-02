@@ -23,7 +23,7 @@ const HamsterInfo = (props) => {
 
 	const deleteHamster = async () => {
 		if (window.confirm(`Are you sure you want to delete ${props.hamster.name} from Hamsterwars?`)) {
-			const url = '/hamsters/' + props.hamster.id
+			const url = 'http://localhost:1111/hamsters/' + props.hamster.id
 			try {
 				const response = await axios.delete(url)
 				console.log(response.data);
@@ -33,7 +33,7 @@ const HamsterInfo = (props) => {
 		}
 	}
 
-	const imgSrc = '/img/' + props.hamster.imgName
+	const imgSrc = 'http://localhost:1111/img/' + props.hamster.imgName
 	const imgAlt = props.hamster.name + ' picture'
 
 	return (

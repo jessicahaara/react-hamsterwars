@@ -1,0 +1,89 @@
+.battle {
+	margin: 0 auto;
+	width: 90vw;
+	height: 90vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.battle .vs {
+	font-family: 'Smokum';
+	font-size: 5vw;
+}
+
+.battle-card {
+	width: 35vw;
+	height: 80vh;
+	background-image: url('../../media/paper.jpg');
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: 0.3s;
+}
+
+.battle-card:hover {
+	transform: scale(1.05);
+	cursor: pointer;
+	border: 4px solid var(--blue)
+}
+
+.top-battle-card {
+	margin-top: -2vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.battle-card hr {
+	width: 37%;
+	border: 2px solid black;
+}
+
+.battle-card .under {
+	margin: 0.5em auto;
+	width: 86%;
+}
+
+.battle-card h2 {
+	font-size: 3vw;
+	margin-top: -0.3em;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+.battle-card img.hamster-pic {
+	width: 85%;
+	height: 45vh;
+	object-fit: cover;
+	border: 4px solid black;
+}
+
+.bottom-battle-card p {
+	font-size: 1.5vw;
+}
+
+.vote {
+	transition: 0.5s;
+	position: absolute;
+	top: 7vh;
+	opacity: 0;
+}
+
+.vote p {
+	text-transform: uppercase;
+	color: var(--blue);
+	background-color: var(--lightbrown);
+	font-family: 'Smokum';
+	font-size: 3vw;
+	letter-spacing: 0.1em;
+	padding: 0.1em;
+}
+
+.battle-card:hover .vote {
+	opacity: 1;
+}

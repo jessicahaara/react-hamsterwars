@@ -24,7 +24,7 @@ const NewHamster = ({ setShowAddNew }) => {
 	const addHamster = async () => {
 		const hamsterToAdd = { ...newHamster }
 		hamsterToAdd.age = Number(newHamster.age)
-		const url = '/hamsters'
+		const url = 'http://localhost:1111/hamsters'
 		try {
 			const response = await axios.post(url, hamsterToAdd)
 			console.log(response);
