@@ -21,6 +21,7 @@ function App() {
         console.log(response.data);
         setData(response.data);
       } catch (error) {
+        setData(false)
         console.log(error);
       }
     }
@@ -32,15 +33,15 @@ function App() {
     <Router>
       <div className="App">
         <header>
-          {sessionStorage.getItem('enter') ? <Header /> : ''}
+          {sessionStorage.getItem('enter') && data ? <Header /> : ''}
         </header>
         <main>
           <Switch>
-            <Route path="/battle"><Battle setUpdateData={setUpdateData}/></Route>
-            <Route path="/gallery"><Gallery hamsters={data} setUpdateData={setUpdateData}/></Route>
+            <Route path="/battle"><Battle setUpdateData={setUpdateData} /></Route>
+            <Route path="/gallery"><Gallery hamsters={data} setUpdateData={setUpdateData} /></Route>
             <Route path="/statistics"></Route>
             <Route path="/history"></Route>
-            <Route path="/"><Home /></Route>
+            <Route path="/"><Home data={data} /></Route>
           </Switch>
         </main>
       </div>

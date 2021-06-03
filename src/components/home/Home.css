@@ -44,6 +44,16 @@ img.hamster-logo {
 	margin-bottom: 5vh;
 }
 
+.reload {
+	height: 35vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.reload h2 {
+	margin-top: 0em;
+}
 
 @keyframes hr-stretch {
 	0% {width: 0vw;}

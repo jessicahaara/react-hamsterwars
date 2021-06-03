@@ -23,7 +23,7 @@
 }
 
 .new-hamster .lightbox h3 {
-	font-size: 4.5vw;
+	font-size: 3.5vw;
 	margin-top: -0.2em;
 	margin-bottom: 2vh;
 	text-transform: uppercase;
@@ -38,7 +38,7 @@ label {
 	display: flex;
 	flex-direction: column;
 	font-family: 'Raleway';
-	font-size: 4vh;
+	font-size: 3.5vh;
 }
 
 input[type=text] {
@@ -71,4 +71,14 @@ input[type=text] {
 
 .ok-btn {
 	margin-top: 2vh;
+}
+
+p.msg {
+	color: rgb(236, 1, 1);
+	font-size: 1vw;
+} 
+
+p.correct {
+	color: rgb(236, 1, 1);
+	font-size: 1.6vw;
 }
