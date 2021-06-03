@@ -64,3 +64,11 @@ input[type=text] {
 	cursor: pointer;
 	transform: scale(1.1);
 }
+
+.new-hamster p {
+	font-size: 2vw;
+}
+
+.ok-btn {
+	margin-top: 2vh;
+}

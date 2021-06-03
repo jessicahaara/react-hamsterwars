@@ -4,7 +4,7 @@ import GalleryCard from './GalleryCard.jsx'
 import NewHamster from './NewHamster.jsx'
 import HamsterInfo from './HamsterInfo.jsx'
 
-const Gallery = ({ hamsters }) => {
+const Gallery = ({ hamsters, setUpdateData }) => {
 	const [showAddNew, setShowAddNew] = useState(false)
 	const [showHamsterInfo, setShowHamsterInfo] = useState(false)
 	const [choosenHamster, setChoosenHamster] = useState({})
@@ -32,9 +32,9 @@ const Gallery = ({ hamsters }) => {
 				</div>
 			</div>
 
-			{showAddNew ? <NewHamster setShowAddNew={setShowAddNew} /> : ''}
+			{showAddNew ? <NewHamster setShowAddNew={setShowAddNew} setUpdateData={setUpdateData} /> : ''}
 
-			{showHamsterInfo ? <HamsterInfo hamster={choosenHamster} setShowHamsterInfo={setShowHamsterInfo} /> : ''}
+			{showHamsterInfo ? <HamsterInfo hamster={choosenHamster} setShowHamsterInfo={setShowHamsterInfo} setUpdateData={setUpdateData} /> : ''}
 		</div>
 	)
 }

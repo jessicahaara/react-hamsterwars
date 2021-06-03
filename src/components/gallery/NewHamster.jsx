@@ -3,7 +3,7 @@ import './NewHamster.css'
 import BlueButton from '../button/BlueButton.jsx'
 import axios from 'axios';
 
-const NewHamster = ({ setShowAddNew }) => {
+const NewHamster = ({ setShowAddNew, setUpdateData }) => {
 	const [newHamster, setNewHamster] = useState({
 		name: '',
 		age: '',
@@ -14,6 +14,8 @@ const NewHamster = ({ setShowAddNew }) => {
 		defeats: 0,
 		wins: 0
 	})
+
+	const [addSucceded, setAddSucceded] = useState(false)
 
 	const setHamster = (key, value) => {
 		const hamster = { ...newHamster }
@@ -27,43 +29,60 @@ const NewHamster = ({ setShowAddNew }) => {
 		const url = 'http://localhost:1111/hamsters'
 		try {
 			const response = await axios.post(url, hamsterToAdd)
-			console.log(response);
+			if (response.status === 200) {
+				setAddSucceded(true)
+				setUpdateData(Date.now())
+			}
 		} catch (error) {
 			console.log(error);
 		}
+
 	}
 
 	return (
 		<div className="new-hamster">
 			<section className="lightbox">
-				<h3>
-					Add new hamster
+				{!addSucceded
+					? <>
+						<h3>
+							Add new hamster
 		 		</h3>
-				<div className="form">
-					<label>Name:
+						<div className="form">
+							<label>Name:
 					<input type="text" onChange={event => { setHamster("name", event.target.value); }} value={newHamster.name} />
-					</label>
+							</label>
 
-					<label>Age:
+							<label>Age:
 					<input type="text" onChange={event => { setHamster("age", event.target.value); }} value={newHamster.age} />
-					</label>
+							</label>
 
-					<label>Image name:
+							<label>Image name:
 					<input type="text" onChange={event => { setHamster("imgName", event.target.value); }} value={newHamster.imgName} />
-					</label>
+							</label>
 
-					<label>Loves to:
+							<label>Loves to:
 					<input type="text" onChange={event => { setHamster("loves", event.target.value); }} value={newHamster.loves} />
-					</label>
+							</label>
 
-					<label>Favorite food:
+							<label>Favorite food:
 					<input type="text" onChange={event => { setHamster("favFood", event.target.value); }} value={newHamster.favFood} />
-					</label>
-				</div>
-				<div onClick={() => addHamster()}>
-					<BlueButton btnName="add" />
-				</div>
-
+							</label>
+						</div>
+						<div onClick={() => addHamster()}>
+							<BlueButton btnName="add" />
+						</div>
+					</>
+					: <>
+						<h3>
+							Welcome {newHamster.name}!
+					</h3>
+						<p>Your hamster is now added to Hamsterwars.</p>
+						<p>Good Luck!</p>
+						<div className="ok-btn"
+							onClick={() => setShowAddNew(false)}>
+							<BlueButton btnName="OK" />
+						</div>
+					</>}
 				<p className="close"
 					onClick={() => setShowAddNew(false)}>x</p>
 			</section>

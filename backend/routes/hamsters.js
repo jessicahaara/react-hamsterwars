@@ -2,10 +2,9 @@ const express = require('express');
 const router = express.Router();
 
 const db = require('../database.js');
-const collection = db.getCollection('hamsters')
 
 router.get('/', async (req, res) => {
-	const response = await collection
+	const response = await db.getCollection('hamsters')
 	if (typeof response === 'number') {
 		res.sendStatus(response)
 		return
@@ -14,7 +13,7 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/random', async (req, res) => {
-	const items = await collection
+	const items = await db.getCollection('hamsters')
 	const random = Math.floor(Math.random() * items.length)
 	res.send(items[random])
 })

@@ -11,6 +11,7 @@ import Gallery from './components/gallery/Gallery.jsx'
 
 function App() {
   const [data, setData] = useState([])
+  const [updateData, setUpdateData] = useState(0)
 
   useEffect(() => {
 
@@ -25,7 +26,7 @@ function App() {
     }
 
     getHamsters()
-  }, [])
+  }, [updateData])
 
   return (
     <Router>
@@ -35,8 +36,8 @@ function App() {
         </header>
         <main>
           <Switch>
-            <Route path="/battle"><Battle /></Route>
-            <Route path="/gallery"><Gallery hamsters={data} /></Route>
+            <Route path="/battle"><Battle setUpdateData={setUpdateData}/></Route>
+            <Route path="/gallery"><Gallery hamsters={data} setUpdateData={setUpdateData}/></Route>
             <Route path="/statistics"></Route>
             <Route path="/history"></Route>
             <Route path="/"><Home /></Route>

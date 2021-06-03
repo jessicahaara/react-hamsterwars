@@ -1,0 +1,60 @@
+.finished-game {
+	height: 85vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between
+}
+
+.finished-game h2 {
+	margin-top: -2vh;
+	font-size: 3.5vw;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+
+}
+
+.finished-game .hamsters {
+	display: flex;
+	width: 80vw;
+	justify-content: space-between;
+}
+
+.winner, 
+.loser {
+	width: 35vw;
+	height: 60vh;
+	background-image: url('../../media/paper.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+.winner {
+	border: 4px solid var(--blue);
+}
+
+.loser {
+	border: 4px solid var(--red)
+}
+
+.winner h3,
+.loser h3 {
+	font-size: 2.2vw;
+}
+
+
+
+.finished-game .hamsters img {
+	width: 30vw;
+	height: 38vh;
+	object-fit: cover;
+	margin: 0.3vh auto
+}
+
+.winner img.firework {
+	position: absolute;
+	height: 20vh;
+	width: auto;
+	top: 10vh;
+	left: 25vw;
+	z-index: -1;
+}

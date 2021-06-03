@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+// import { useState, useEffect } from 'react'
 import './HamsterInfo.css'
 import star from '../../media/star.svg'
 import axios from 'axios';
@@ -26,11 +26,15 @@ const HamsterInfo = (props) => {
 			const url = 'http://localhost:1111/hamsters/' + props.hamster.id
 			try {
 				const response = await axios.delete(url)
-				console.log(response.data);
+				if (response.status === 200) {
+					props.setShowHamsterInfo(false)
+				}
 			} catch (error) {
 				console.log(error);
 			}
 		}
+
+		props.setUpdateData(Date.now())
 	}
 
 	const imgSrc = 'http://localhost:1111/img/' + props.hamster.imgName
