@@ -11,6 +11,7 @@ const imageFolder = path.join(__dirname, './img');
 
 const hamsters = require('./routes/hamsters.js');
 const matches = require('./routes/matches.js');
+const matchwinners = require('./routes/matchwinners.js');
 
 app.use((req, res, next) => {
 	console.log(`${req.method} ${req.url} `, req.params);
@@ -25,7 +26,7 @@ app.use('/img', express.static(imageFolder));
 
 app.use('/hamsters', hamsters);
 app.use('/matches', matches);
-// app.use('/matchwinners', matchwinners);
+app.use('/matchwinners', matchwinners);
 // app.use('/winners', winners);
 // app.use('/losers', losers);
 // app.use('/defeated', defeated);

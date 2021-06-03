@@ -1,25 +1,9 @@
-// import { useState, useEffect } from 'react'
 import './HamsterInfo.css'
 import star from '../../media/star.svg'
 import axios from 'axios';
 
 const HamsterInfo = (props) => {
-	// const [matchData, setMatchData] = useState([])
 
-	// useEffect(() => {
-	// 	const url = 'http://localhost:1111/matchwinner/' + props.hamster.id
-
-	// 	const getMatchWinners = async () => {
-	// 		try {
-	// 			const response = await axios.get(url)
-	// 			setMatchData(response.data);
-	// 		} catch (error) {
-	// 			console.log(error);
-	// 		}
-	// 	}
-
-	// 	getMatchWinners()
-	// }, [])
 
 	const deleteHamster = async () => {
 		if (window.confirm(`Are you sure you want to delete ${props.hamster.name} from Hamsterwars?`)) {
@@ -66,9 +50,20 @@ const HamsterInfo = (props) => {
 						<p>Battles: {props.hamster.games}</p>
 						<p>Wins: {props.hamster.wins}</p>
 						<p>Defeats: {props.hamster.defeats}</p>
-						<p>Won against: <br />
-						Ella <br />
-						Peter<br /></p>
+						<p>Won against: </p>
+						{!props.defeatedNamesList ?
+							<p>No wins :(</p>
+							: <>
+								<ul>
+									{props.defeatedNamesList.map(item => {
+										return (
+											<li key={item.name}>
+												<p>{item.name} {item.times > 1 ? <span> x {item.times}</span> : ''} </p>
+											</li>
+										)
+									})}
+								</ul>
+							</>}
 					</section>
 				</section>
 
