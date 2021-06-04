@@ -28,7 +28,7 @@ const Match = ({ matchWinner, matchLoser, matchId, setUpdate }) => {
 
 		setHamsters()
 
-	}, [])
+	}, [matchWinner, matchLoser])
 
 	const deleteMatch = async () => {
 		if (window.confirm(`Are you sure you want to delete this battle from Hamsterwars?`)) {
