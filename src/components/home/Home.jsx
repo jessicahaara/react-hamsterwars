@@ -28,10 +28,12 @@ const Home = ({ data }) => {
 							<img src={star} alt="star" className="star" />
 							<hr />
 						</section>
+						<p>HOW IT WORKS:</p>
 						<p className="instructions">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+							1. In Battle two of our Hamsters will fight each other in cuteness. It's up to you who wins! Vote for the cutest!
+							<br />2. Check out our contestants in the Gallery, in here you can add and delete hamsters.
+							<br/>
+							3. If you want more information about our battles check out Statistics or History!
 			</p>
 						<section className="btn-logo">
 							<Link to="/battle" className="main-btns">

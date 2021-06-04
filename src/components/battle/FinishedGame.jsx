@@ -11,14 +11,14 @@ const FinishedGame = ({ hamsters, setGameFinished }) => {
 				<section className="winner">
 					<img src={firework} alt="firework" className="firework"/>
 					<h3>WINNER {hamsters.winner.name}</h3>
-					<img src={`http://localhost:1111/img/${hamsters.winner.imgName}`} alt={hamsters.winner.name} />
+					<img src={`/img/${hamsters.winner.imgName}`} alt={hamsters.winner.name} />
 					<h3>Battle statistics:</h3>
 					<p>Wins: {hamsters.winner.wins}</p>
 					<p>Defeats: {hamsters.winner.defeats}</p>
 				</section>
 				<section className="loser">
 					<h3>LOSER {hamsters.loser.name}</h3>
-					<img src={`http://localhost:1111/img/${hamsters.loser.imgName}`} alt={hamsters.loser.name} />
+					<img src={`/img/${hamsters.loser.imgName}`} alt={hamsters.loser.name} />
 					<h3>Battle statistics:</h3>
 					<p>Wins: {hamsters.loser.wins}</p>
 					<p>Defeats: {hamsters.loser.defeats}</p>

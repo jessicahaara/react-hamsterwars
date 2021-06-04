@@ -88,7 +88,7 @@ const NewHamster = ({ setShowAddNew, setUpdateData }) => {
 		if (check) {
 			const hamsterToAdd = { ...newHamster }
 			hamsterToAdd.age = Number(newHamster.age)
-			const url = 'http://localhost:1111/hamsters'
+			const url = '/hamsters'
 			try {
 				const response = await axios.post(url, hamsterToAdd)
 				if (response.status === 200) {
@@ -146,7 +146,10 @@ const NewHamster = ({ setShowAddNew, setUpdateData }) => {
 									type="text"
 									onChange={event => { setHamster("imgName", event.target.value); }}
 									value={newHamster.imgName}
-									onFocus={() => setImgTouched(false)}
+									onFocus={() => {
+										setImgTouched(false);
+										setAllValid(true)
+									}}
 									onBlur={() => setImgTouched(true)}
 								/>
 							</label>
@@ -157,7 +160,10 @@ const NewHamster = ({ setShowAddNew, setUpdateData }) => {
 									type="text"
 									onChange={event => { setHamster("loves", event.target.value); }}
 									value={newHamster.loves}
-									onFocus={() => setLovesTouched(false)}
+									onFocus={() => {
+										setLovesTouched(false);
+										setAllValid(true)
+									}}
 									onBlur={() => setLovesTouched(true)}
 								/>
 							</label>
@@ -168,7 +174,10 @@ const NewHamster = ({ setShowAddNew, setUpdateData }) => {
 									type="text"
 									onChange={event => { setHamster("favFood", event.target.value); }}
 									value={newHamster.favFood}
-									onFocus={() => setFoodTouched(false)}
+									onFocus={() => {
+										setFoodTouched(false);
+										setAllValid(true)
+									}}
 									onBlur={() => setFoodTouched(true)}
 								/>
 							</label>

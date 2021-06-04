@@ -1,0 +1,53 @@
+.stats {
+	height: 90vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.stats h2 {
+	font-size: 3.5vw;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+.stat-board {
+	width: 40vw;
+	height: 72vh;
+	background-image: url('../../media/paper.jpg');
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.stat-board .hamster {
+	display: flex;
+	border-bottom: 2px solid black;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.stat-board .hamster img {
+	height: 12vh;
+	width: 10vw;
+	object-fit: cover;
+	padding: 1vh;
+}
+
+.stat-board .hamster:last-child {
+	border: none;
+}
+
+.stat-board .hamster .last {
+	margin-right: 2vw;
+}
+
+.stat-board .hamster h3 {
+	font-size: 2vw;
+}
+
+.stat-board .hamster p {
+	font-size: 1.2vw;
+}

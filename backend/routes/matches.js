@@ -14,6 +14,11 @@ router.get('/', async (req, res) => {
 	res.send(response)
 })
 
+router.get('/latest', async (req, res) => {
+	const response = await db.getOrderedCollection('matches', 'timestamp', 'desc', 10)
+
+	res.send(response)
+})
 
 router.get('/:id', async (req, res) => {
 	const response = await db.getDocById('matches', req.params.id)
@@ -27,6 +32,9 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
 	const obj = req.body
+
+	obj.timestamp = Date.now()
+
 	if (!obj.winnerId || !obj.loserId) {
 		res.sendStatus(400)
 		return

@@ -1,0 +1,82 @@
+.history h2 {
+	font-size: 3.5vw;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	margin-top: 2vh;
+}
+
+.history .underline {
+	margin-top: -1vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.history hr {
+	border-top: 2px solid black;
+	width: 28vw;
+	animation: hr-stretch 2s;
+}
+
+.match {
+	width: 70vw;
+	height: 40vh;
+	background-image: url('../../media/paper.jpg');
+	background-size: cover;
+	background-position: center;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+	margin: 1vh auto 3vh auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.match h3 {
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+.match img {
+	width: 26vw;
+	height: 30vh;
+	object-fit: cover;
+}
+
+.win img {
+	border: 3px solid var(--blue);
+}
+
+.los img {
+	border: 3px solid var(--red)
+}
+
+.vs {
+	font-family: 'Smokum';
+	font-size: 3vw;
+}
+
+.delete {
+	background-color: var(--red);
+	color: white;
+	font-size: 2vw;
+	padding: 0.1em 0.5em 0.3em 0.5em;
+	border-radius: 50%;
+	position: absolute;
+	left: 85vw;
+	transition: 0.3s;
+	opacity: 0;
+}
+
+.delete:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+
+@keyframes hr-stretch {
+	0% {width: 0vw;}
+	100% {width: 28vw;}
+}
+
+.match:hover .delete {
+	opacity: 1;
+}

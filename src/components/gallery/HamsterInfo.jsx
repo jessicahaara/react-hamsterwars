@@ -7,7 +7,7 @@ const HamsterInfo = (props) => {
 
 	const deleteHamster = async () => {
 		if (window.confirm(`Are you sure you want to delete ${props.hamster.name} from Hamsterwars?`)) {
-			const url = 'http://localhost:1111/hamsters/' + props.hamster.id
+			const url = '/hamsters/' + props.hamster.id
 			try {
 				const response = await axios.delete(url)
 				if (response.status === 200) {
@@ -21,7 +21,7 @@ const HamsterInfo = (props) => {
 		props.setUpdateData(Date.now())
 	}
 
-	const imgSrc = 'http://localhost:1111/img/' + props.hamster.imgName
+	const imgSrc = '/img/' + props.hamster.imgName
 	const imgAlt = props.hamster.name + ' picture'
 
 	return (

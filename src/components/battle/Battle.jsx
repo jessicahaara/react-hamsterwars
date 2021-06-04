@@ -17,7 +17,7 @@ const Battle = ({ setUpdateData }) => {
 
 	const randomHamster = async () => {
 		try {
-			const response = await axios.get('http://localhost:1111/hamsters/random')
+			const response = await axios.get('/hamsters/random')
 			return response.data
 		} catch (error) {
 			console.log(error);
@@ -25,7 +25,7 @@ const Battle = ({ setUpdateData }) => {
 	}
 
 	const postMatch = async (match) => {
-		const url = 'http://localhost:1111/matches'
+		const url = '/matches'
 
 		try {
 			const response = await axios.post(url, match)
@@ -36,7 +36,7 @@ const Battle = ({ setUpdateData }) => {
 	}
 
 	const putHamster = async (hamster) => {
-		const url = 'http://localhost:1111/hamsters/' + hamster.id
+		const url = '/hamsters/' + hamster.id
 		console.log(hamster.id);
 		try {
 			const response = await axios.put(url, hamster)
@@ -47,7 +47,7 @@ const Battle = ({ setUpdateData }) => {
 	}
 
 	const getHamster = async (id) => {
-		const url = 'http://localhost:1111/hamsters/' + id
+		const url = '/hamsters/' + id
 		try {
 			const response = await axios.get(url)
 			return response.data

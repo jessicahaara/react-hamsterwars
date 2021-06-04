@@ -2,7 +2,7 @@ import './Battle.css'
 import star from '../../media/star.svg'
 
 const BattleCard = ({ hamster }) => {
-	const imgSrc = 'http://localhost:1111/img/' + hamster.imgName
+	const imgSrc = '/img/' + hamster.imgName
 	const imgAlt = hamster.name + ' picture'
 	return (
 		<div className="battle-card">

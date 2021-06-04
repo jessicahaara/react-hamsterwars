@@ -12,7 +12,7 @@ const Gallery = ({ hamsters, setUpdateData }) => {
 	const [defeatedNamesList, setDefeatedNamesList] = useState([])
 
 	const getHamster = async (id) => {
-		const url = 'http://localhost:1111/hamsters/' + id
+		const url = '/hamsters/' + id
 		try {
 			const response = await axios.get(url)
 			return response.data.name
@@ -23,7 +23,7 @@ const Gallery = ({ hamsters, setUpdateData }) => {
 
 
 	const getMatchWinners = async (id) => {
-		const url = 'http://localhost:1111/matchwinners/' + id
+		const url = '/matchwinners/' + id
 		try {
 			const response = await axios.get(url)
 			return response.data
